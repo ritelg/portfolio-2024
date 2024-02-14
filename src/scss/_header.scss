@@ -1,0 +1,20 @@
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: $width-desktop) {
+  .header {
+    min-height: 100vh;
+  }
+  .header:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url($background-desktop) no-repeat center center/cover;
+    opacity: .5;
+  }
+}

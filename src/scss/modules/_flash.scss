@@ -1,0 +1,29 @@
+.flash {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.flash-message {
+  border-radius: $border-radius;
+  padding: .5rem 1rem;
+  p {
+    margin: 0;
+  }
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.flash-message.flash-danger {
+  background-color: $danger-background;
+  color: $danger-text;
+}
+
+.flash-message.flash-success {
+  background-color: $succes-background;
+  color: $succes-text;
+}
+
+.flash-message.flash-warning {
+  background-color: $warning-background;
+  color: $warning-text;
+}
+

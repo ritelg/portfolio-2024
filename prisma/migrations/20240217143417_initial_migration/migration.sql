@@ -45,6 +45,45 @@ CREATE TABLE "verificationtokens" (
     "expires" DATETIME NOT NULL
 );
 
+-- CreateTable
+CREATE TABLE "PortfolioCategory" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "title" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Portfolio" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "title" TEXT NOT NULL,
+    "content" TEXT,
+    "pos_home" INTEGER,
+    "pos_category" INTEGER,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL,
+    "portfolioCategoryId" TEXT,
+    CONSTRAINT "Portfolio_portfolioCategoryId_fkey" FOREIGN KEY ("portfolioCategoryId") REFERENCES "PortfolioCategory" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "SkillCategory" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "title" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Skills" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "title" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL,
+    "skillCategoryId" TEXT,
+    CONSTRAINT "Skills_skillCategoryId_fkey" FOREIGN KEY ("skillCategoryId") REFERENCES "SkillCategory" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "Account_provider_providerAccountId_key" ON "Account"("provider", "providerAccountId");
 
@@ -59,3 +98,15 @@ CREATE UNIQUE INDEX "verificationtokens_token_key" ON "verificationtokens"("toke
 
 -- CreateIndex
 CREATE UNIQUE INDEX "verificationtokens_identifier_token_key" ON "verificationtokens"("identifier", "token");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "PortfolioCategory_title_key" ON "PortfolioCategory"("title");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Portfolio_title_key" ON "Portfolio"("title");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "SkillCategory_title_key" ON "SkillCategory"("title");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Skills_title_key" ON "Skills"("title");

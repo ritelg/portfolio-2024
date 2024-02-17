@@ -10,7 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Account {
   id                    String  @id @default(cuid())
   userId                String
@@ -48,12 +47,13 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
-  role          String      @default("USER")
+  role          String    @default("USER")
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
   sessions      Session[]
 }
+
 model VerificationToken {
   identifier String
   token      String   @unique
@@ -61,4 +61,41 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map("verificationtokens")
+}
+
+model PortfolioCategory {
+  id        String      @id @default(cuid())
+  title     String    @unique
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  Portfolio Portfolio[]
+}
+
+model Portfolio {
+  id                  String             @id @default(cuid())
+  title               String @unique
+  content             String?
+  category            PortfolioCategory? @relation(fields: [portfolioCategoryId], references: [id])
+  pos_home            Int?
+  pos_category        Int?
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  portfolioCategoryId String?
+}
+
+model SkillCategory {
+  id        String   @id @default(cuid())
+  title     String  @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Skills    Skills[]
+}
+
+model Skills {
+  id              String         @id @default(cuid())
+  title           String        @unique
+  category        SkillCategory? @relation(fields: [skillCategoryId], references: [id])
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  skillCategoryId String?
 }

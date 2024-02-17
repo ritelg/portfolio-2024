@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import "../scss/globals.scss";
+import {SessionProvider} from "next-auth/react";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400,500,700&family=Open+Sans:wght@400&display=swap" rel="stylesheet"/>
+        
+      </head>
+      <body>
+      {children}
+      </body>
     </html>
   );
 }

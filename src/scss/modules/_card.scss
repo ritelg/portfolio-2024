@@ -1,0 +1,62 @@
+.card {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  overflow: hidden;
+  background-color: #fff;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+.card-round {
+  border-radius: 4rem;
+  text-align: center;
+  p { 
+    margin: 0 auto;
+  }
+}
+.card-body {
+  padding: 1.5rem;
+}
+.card-title {
+  @extend %h2;
+}
+.card-more {
+  font-weight: 300;
+}
+
+@media (min-width: $width-desktop) {
+  .card.card-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    box-shadow: none;
+    background: none;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    max-width: 80%;
+  }
+  .card-row.card:nth-child(even) {
+    margin-left: auto;
+    flex-direction: row-reverse;
+    .card-title { text-align: right; }
+    img { margin-left: 2rem; margin-right: 0; }
+    .card-more { text-align: right; display: block; }
+
+  }
+
+  .card-row img { 
+    overflow: hidden;
+    margin-right: 2rem;
+    border-radius: $border-radius;
+    width: 40vw;
+  }
+  .card-row .card-body {
+    padding: 0;
+  }
+  .card-row .card-title {
+    margin-top: 0;
+  }
+}

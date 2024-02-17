@@ -1,0 +1,46 @@
+/**  COLORS  **/
+$color-alt: #00C9FF;
+$color-fonce: #151515;
+$color-clair: #F8F9FA;
+
+$danger-text: #2c0b0e; 
+$danger-background: #F8D7DA;
+$danger-hover: #BB2D3B;
+$danger-color: #DC3545;
+
+$succes-text: #051b11;
+$succes-hover: #157347;
+$succes-background: #D1E7DD;
+
+$warning-text: #332701;
+$warning-hover: #FFCA2C;
+$warning-background: #FFF3CD;
+
+
+$box-shadow: 0 0 6px rgba($color-fonce, .2); 
+$directory-image: '/images/';
+$background-desktop: $directory-image + 'background-desktop.jpg';
+$logo: $directory-image + 'logo.svg';
+$menu-mobile: $directory-image + 'menu-mobile.svg';
+
+/** SIZES **/
+$premiere-police: "Open Sans", sans-serif;
+$second-police: 'JetBrains Mono', monospace;
+
+$font-size-mobile: 15px;
+$font-size-tablet: 18px;
+$font-size-desktop: 20px;
+$factor-size-mobile: 1.2;
+$factor-size-tablet: 1.3;
+$factor-size-desktop: 1.4;
+
+$border-radius: 5px;
+
+
+$width-tablet: 768px;
+$width-desktop: 1024px;
+$width-desktop-l: 1440px;
+
+$assets-directory: '/images/';
+
+// $logo: $image-directory + 'logo.svg';

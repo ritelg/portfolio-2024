@@ -20,17 +20,19 @@ $warning-background: #FFF3CD;
 $box-shadow: 0 0 6px rgba($color-fonce, .2); 
 $directory-image: '/images/';
 $background-desktop: $directory-image + 'background-desktop.jpg';
+$logo: $directory-image + 'logo.svg';
+$menu-mobile: $directory-image + 'menu-mobile.svg';
 
 /** SIZES **/
 $premiere-police: "Open Sans", sans-serif;
 $second-police: 'JetBrains Mono', monospace;
 
-$font-size-mobile: 16px;
-$font-size-tablet: 21px;
-$font-size-desktop: 22px;
-$factor-size-mobile: 1.7;
-$factor-size-tablet: 1.8;
-$factor-size-desktop: 1.9;
+$font-size-mobile: 15px;
+$font-size-tablet: 18px;
+$font-size-desktop: 20px;
+$factor-size-mobile: 1.2;
+$factor-size-tablet: 1.3;
+$factor-size-desktop: 1.4;
 
 $border-radius: 5px;
 

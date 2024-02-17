@@ -1,13 +1,18 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
-import Footer from "@/components/Footer";
+import Footer from "@/components/layout/includes/footer";
+import Header from "@/components/layout/includes/header";
+import {getAuthSession} from "@/libs/auth";
 
-export default function Home() {
+
+export default async function Home() {
+  // const session = await getAuthSession();
+
   return (
-    <main className={styles.main}>
-      <h1>Home</h1>
+   <>
+   <Header />
+    <main >
       <Footer />
     </main>
+   </> 
   );
 }
 

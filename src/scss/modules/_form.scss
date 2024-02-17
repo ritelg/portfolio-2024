@@ -24,6 +24,12 @@ textarea {
   background-color: $color-alt;
   border-color: $color-alt;
 }
+.btn-group {
+  display: flex;
+  margin-top: 1rem;
+  & > .btn { margin-right: 1rem; }
+  & > .btn:last-child { margin-right: 0; }
+}
 input, textarea, label, select{
   color: $color-clair;
   font-size: 1rem;

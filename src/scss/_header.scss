@@ -13,16 +13,7 @@
   background: url($background-desktop) no-repeat center center/cover;
   opacity: .5;
 }
-@media screen and (min-width: 768px) {
-}
 
-@media screen and (min-width: $width-desktop) {
-  .header {
-    padding-left: 7rem;
-    padding-right: 7rem;
-    min-height: 100vh;
-  }
-}
 
 //============================================
 //		Navbar

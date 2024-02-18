@@ -19,19 +19,20 @@ export default async function Header () {
         </p>
         <ul>
           Graphismes : 
-          {skills["Graphisme"].map((skill) => <li>{skill}, </li>)}
+          {skills["Graphisme"]?.map((skill) => <li key={skill}>{skill}, </li>)}
         </ul>
+
         <ul>
         Front-end :
-        {skills["Frontend"].map((skill) => <li>{skill}, </li>)}
+        {skills["Frontend"]?.map((skill) => <li key={skill}>{skill}, </li>)}
         </ul>
         <ul>
         Back-end :
-        {skills["Backend"].map((skill) => <li>{skill}, </li>)}
+        {skills["Backend"].map((skill) => <li key={skill}>{skill}, </li>)}
         </ul>
         <ul>
         Autres :
-        {skills["Autres"].map((skill) => <li>{skill}, </li>)}
+        {skills["Autres"].map((skill) => <li key={skill}>{skill}, </li>)}
         </ul>
         <div className="btn-group">
           <a href="" className="btn">Télécharger mon CV</a>

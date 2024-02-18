@@ -1,17 +1,18 @@
-import Footer from "@/components/layout/includes/footer";
 import Header from "@/components/layout/includes/header";
-import {getAuthSession} from "@/libs/auth";
+import Services from "./services";
+import Portfolio from "./portfolio";
+import Modal from "@/components/modules/modal";
 import {seed} from "@/utils/seed-db";
 
 
 export default async function Home() {
   // const session = await getAuthSession();
+  // await seed();
   return (
    <>
    <Header />
-    <main >
-      <Footer />
-    </main>
+   <Services />
+   <Portfolio />
    </> 
   );
 }

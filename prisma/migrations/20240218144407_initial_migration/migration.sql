@@ -61,6 +61,7 @@ CREATE TABLE "Portfolio" (
     "content" TEXT,
     "url" TEXT,
     "image" TEXT NOT NULL,
+    "slug" TEXT,
     "pos_home" INTEGER NOT NULL,
     "pos_category" INTEGER NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,

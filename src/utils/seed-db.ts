@@ -25,7 +25,8 @@ export async function seed() {
         url: p.url,
         pos_home: p.pos_home,
         pos_category: p.pos_category,
-        image: p.image
+        image: p.image,
+        slug: p.slug
       }
     })
   })

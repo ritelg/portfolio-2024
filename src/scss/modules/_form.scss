@@ -19,6 +19,7 @@ textarea {
   transition-property: color, background-color;
   font-family: $premiere-police;
   font-size: 1rem;
+  display: inline-block;
 }
 .btn:hover {
   background-color: $color-alt;

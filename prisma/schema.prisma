@@ -79,6 +79,7 @@ model Portfolio {
   category            PortfolioCategory @relation(fields: [portfolioCategoryId], references: [id])
   url                String?
   image              String
+  slug              String?
   pos_home            Int
   pos_category        Int
   createdAt           DateTime           @default(now())

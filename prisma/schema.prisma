@@ -69,18 +69,21 @@ model PortfolioCategory {
   createdAt DateTime    @default(now())
   updatedAt DateTime    @updatedAt
   Portfolio Portfolio[]
+  slug      String?
 }
 
 model Portfolio {
   id                  String             @id @default(cuid())
   title               String @unique
   content             String?
-  category            PortfolioCategory? @relation(fields: [portfolioCategoryId], references: [id])
-  pos_home            Int?
-  pos_category        Int?
+  category            PortfolioCategory @relation(fields: [portfolioCategoryId], references: [id])
+  url                String?
+  image              String
+  pos_home            Int
+  pos_category        Int
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt
-  portfolioCategoryId String?
+  portfolioCategoryId String
 }
 
 model SkillCategory {

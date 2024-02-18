@@ -26,3 +26,62 @@ export const skills = [
   {title: 'Git', category: 'Autres'},
   {title: 'Linux', category: 'Autres'},
 ]
+
+export const portfolioCategory = [
+  {title: 'Sites Web', slug: 'sites-web'},
+  {title: 'Print', slug: 'print'},
+  {title: 'Autres', slug: 'autres'},
+]
+
+export const portfolio = [
+  {
+    title: 'Ema Gestion',
+    content: '',
+    url: 'https://www.ema-gestion.fr',
+    pos_home: 3,
+    pos_category: 1,
+    image: '/images/portfolio/ema-gestion.jpg',
+    category: 'Sites Web'
+  },
+  {
+    title: 'Intégration The fiasco',
+    content: '',
+    pos_home: 1,
+    pos_category: 2,
+    image: '/images/portfolio/integration-the-fiasco.jpg',
+    category: 'Sites Web'
+  },
+  {
+    title: 'R&C Danse pour tous',
+    content: '',
+    pos_home: 5,
+    pos_category: 2,
+    url: 'https://rc-dansepourtous.fr',
+    image: '/images/portfolio/rc-dansepourtous.jpg',
+    category: 'Sites Web'
+  },
+  {
+    title: 'Flyer Fiesta Latino Laroquaise',
+    content: '',
+    pos_home: 2,
+    pos_category: 2,
+    image: '/images/portfolio/affiche-fiesta-latino-laroques-30_06_23.jpg',
+    category: 'Print'
+  },
+  {
+    title: 'Flyer Stage semba',
+    content: '',
+    pos_home: 1,
+    pos_category: 1,
+    image: '/images/portfolio/stage-semba-flyer.jpg',
+    category: 'Print'
+  },
+  {
+    title: 'Logo the fiasco',
+    content: '',
+    pos_home: 2,
+    pos_category: 1,
+    image: '/images/portfolio/the-fiasco-logos-large.jpg',
+    category: 'Autres'
+  },
+]

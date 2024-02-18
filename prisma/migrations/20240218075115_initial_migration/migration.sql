@@ -50,7 +50,8 @@ CREATE TABLE "PortfolioCategory" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "title" TEXT NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
+    "updatedAt" DATETIME NOT NULL,
+    "slug" TEXT
 );
 
 -- CreateTable
@@ -58,12 +59,14 @@ CREATE TABLE "Portfolio" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "title" TEXT NOT NULL,
     "content" TEXT,
-    "pos_home" INTEGER,
-    "pos_category" INTEGER,
+    "url" TEXT,
+    "image" TEXT NOT NULL,
+    "pos_home" INTEGER NOT NULL,
+    "pos_category" INTEGER NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL,
-    "portfolioCategoryId" TEXT,
-    CONSTRAINT "Portfolio_portfolioCategoryId_fkey" FOREIGN KEY ("portfolioCategoryId") REFERENCES "PortfolioCategory" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+    "portfolioCategoryId" TEXT NOT NULL,
+    CONSTRAINT "Portfolio_portfolioCategoryId_fkey" FOREIGN KEY ("portfolioCategoryId") REFERENCES "PortfolioCategory" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateTable

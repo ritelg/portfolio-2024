@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../scss/globals.scss";
 import {SessionProvider} from "next-auth/react";
+import Favicons from "@/components/layout/includes/favicons";
 
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400,500,700&family=Open+Sans:wght@400&display=swap" rel="stylesheet"/>
-        
+        <Favicons/>
       </head>
       <body>
       {children}

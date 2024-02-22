@@ -1,16 +1,21 @@
 "use client";
 
-import Modal from "@/components/modules/modal";
-import Link from "next/link";
-import { Category, Portfolio } from "@/utils/type";
 import {useEffect, useState} from "react";
+import Link from "next/link";
+
+import {
+  Modal,
+  LinkButton
+} from "@/components/ui";
+
+import { Category, Portfolio } from "@/utils/type";
 
 type PortfolioState = {
   category: Category[];
   portfolio: Portfolio[];
 }
 
-export default function PortfolioContent({ next_url, children }: { next_url: string, children: React.ReactNode}) {  
+export default function PortfolioContent({ endpoint, children }: { endpoint: string, children: React.ReactNode}) {  
 
   const [state, setState] = useState<PortfolioState>()
   const [slug, setSlug] = useState('tout')
@@ -19,12 +24,11 @@ export default function PortfolioContent({ next_url, children }: { next_url: str
   const [showChildren, setShowChildren] = useState(true)
 
   useEffect(() => {
-    fetch(`${next_url}/api/portfolio-category/${slug}`, { cache: 'no-cache' })
+    fetch(`${endpoint}/${slug}`, { cache: 'no-cache' })
       .then((res) => res.json())
       .then((data) => {
         setShowChildren(false)
         setState(data)
-        console.log(data)
       })
   }, [slug])
 
@@ -41,7 +45,18 @@ export default function PortfolioContent({ next_url, children }: { next_url: str
   return (
     <>
       {showModal && (
-        <Modal closeModal={closeModal} image={modalContent.image} title={modalContent.title} slug={modalContent.slug} content={modalContent.content} url={modalContent.url} />
+        <Modal closeModal={closeModal}>
+          <img src={modalContent.image} alt={modalContent.title} />
+          <div>
+          <h3>{modalContent.title}</h3>
+          {modalContent.content}
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, doloremque commodi dignissimos aspernatur quisquam, ipsum maxime molestiae illo laudantium ullam, corrupti veritatis quam doloribus officiis ducimus quis. Veniam, quidem obcaecati.</p>
+          <p>Voluptates explicabo beatae ipsam nostrum dignissimos aliquam officia fuga, natus ullam voluptas aliquid accusantium commodi quos repellendus ratione ducimus sequi nihil eaque adipisci similique? Enim vel dolorum assumenda architecto quidem!</p>
+          {modalContent.url && (
+            <LinkButton href={modalContent.url}>Voir le site</LinkButton>
+          )}
+          </div>
+        </Modal>
       )}
       <ul className="portfolio-menu">
       {state?.category.map(c => (
@@ -59,7 +74,7 @@ export default function PortfolioContent({ next_url, children }: { next_url: str
           onClick={(event) => {
             event.preventDefault()
             event.stopPropagation()
-            window.history.pushState({}, "", `/portfolio/${p.slug}`)
+            window.history.pushState({}, "", event.currentTarget.href)
             setShowModal(true)
             setModalContent(p)
           }} 

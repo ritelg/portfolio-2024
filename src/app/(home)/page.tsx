@@ -1,19 +1,21 @@
-import Header from "@/components/layout/includes/header";
+import { MainLayout } from "@/components/layout";
+import { ContactForm } from "@/components/contact";
 import Services from "./services";
 import Portfolio from "./portfolio";
-import Modal from "@/components/modules/modal";
 import {seed} from "@/utils/seed-db";
+import {AlertTriangle} from "lucide-react";
+import VideoYoutube from "@/components/ui/video-youtube";
 
 
 export default async function Home() {
   // const session = await getAuthSession();
-  // await seed();
+
   return (
-   <>
-   <Header />
+  <MainLayout>
    <Services />
    <Portfolio />
-   </> 
+   <ContactForm />
+  </MainLayout>
   );
 }
 

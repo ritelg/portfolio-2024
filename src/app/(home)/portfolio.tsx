@@ -6,13 +6,14 @@ import {Portfolio} from "@prisma/client";
 
 
 export default async function Portfolio() {
-  const {portfolio, category} = await fetch(`${env.NEXTAUTH_URL}/api/portfolio-category/tout`, { cache: 'no-cache' }).then((res) => res.json())
+  const endpoint = `${env.NEXTAUTH_URL}/api/portfolio-category`
+  const {portfolio, category} = await fetch(`${endpoint}/tout`, { cache: 'no-cache' }).then((res) => res.json())
   console.log(category)
   return (
     <section className="portfolio container">
       <h2>Portfolio</h2>
       <p>Explorez notre sélection de projets récents, reflétant notre expertise en conception de sites web, création de logos, élaboration de flyers et design de cartes de visites.</p>
-      <PortfolioContent next_url={env.NEXTAUTH_URL} >
+      <PortfolioContent endpoint={endpoint} >
       <div className="portfolio-list">
       {portfolio.map((p: PortfolioType) => (
         <Link 

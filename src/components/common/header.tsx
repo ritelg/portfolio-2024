@@ -1,10 +1,11 @@
-import Nav from "@/components/layout/includes/nav";
 import {env} from "@/libs/env";
+
+import { Nav } from "@/components/common";
+import { LinkButton, } from "@/components/ui";
+
 
 export default async function Header () {
   const {skills} = await fetch(`${env.NEXTAUTH_URL}/api/skills`, { cache: 'no-cache' }).then((res) => res.json())
-  console.log(skills)
-
   return (
       <header className="header">
       <Nav />
@@ -17,26 +18,27 @@ export default async function Header () {
           Transformez votre vision en réalité avec des designs web époustouflants, des flyers percutants et des logos qui marquent les esprits. 
           Découvrez comment nous donnons vie à vos idées dès aujourd’hui !
         </p>
+
         <ul>
           Graphismes : 
-          {skills["Graphisme"]?.map((skill) => <li key={skill}>{skill}, </li>)}
+          {skills["Graphisme"]?.map((skill: string) => <li key={skill}>{skill}, </li>)}
         </ul>
 
         <ul>
         Front-end :
-        {skills["Frontend"]?.map((skill) => <li key={skill}>{skill}, </li>)}
+        {skills["Frontend"]?.map((skill: string) => <li key={skill}>{skill}, </li>)}
         </ul>
         <ul>
         Back-end :
-        {skills["Backend"].map((skill) => <li key={skill}>{skill}, </li>)}
+        {skills["Backend"].map((skill: string) => <li key={skill}>{skill}, </li>)}
         </ul>
         <ul>
         Autres :
-        {skills["Autres"].map((skill) => <li key={skill}>{skill}, </li>)}
+        {skills["Autres"].map((skill: string) => <li key={skill}>{skill}, </li>)}
         </ul>
         <div className="btn-group">
-          <a href="" className="btn">Télécharger mon CV</a>
-          <a href="/#contact" className="btn">Me contacter</a>
+          <LinkButton>Télécharger mon CV</LinkButton>
+          <LinkButton href="/#contact">Me contacter</LinkButton>
         </div>
       </div>
     </header>

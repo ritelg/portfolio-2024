@@ -1,11 +1,11 @@
 "use client"; 
 
-import Link from "next/link";
 import {useRef} from "react";
+import Link from "@/components/ui/link";
 
 export default function Nav () {
 
-  const ulRef = useRef<HTMLAnchorElement>(null)
+  const ulRef = useRef<HTMLUListElement>(null)
 
   function toggleMenuMobile(e: React.MouseEvent<HTMLElement, MouseEvent>) {
     e.preventDefault();

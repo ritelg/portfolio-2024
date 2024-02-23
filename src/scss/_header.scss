@@ -58,6 +58,7 @@
   &.active {
     transform: translate3d(0,0,0);
   }
+  li > a.active { color: $color-alt; }
 }
 
 }
@@ -69,7 +70,7 @@
     display: flex;
     li { margin-right: 1rem; }
     li:last-of-type { margin-right: 0; }
-    a:hover { text-decoration: underline; color: $color-alt; }
+    a:hover, a.active { text-decoration: underline; color: $color-alt; }
   }
   li.close-menu-mobile { display: none; }
 }

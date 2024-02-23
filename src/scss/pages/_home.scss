@@ -101,9 +101,6 @@
 //============================================
 //		Contact
 //============================================
-.contact {
-  text-align: center;
-}
 
 .contact form { margin-top: 2rem; }
 .contact label { text-align: left; }
@@ -111,6 +108,11 @@
 .contact button { width: 100%; }
 
 
+@media screen and (max-width: $width-desktop) {
+  .contact > div, .contact label  {
+    text-align: center;
+  }
+}
 @media screen and (min-width: $width-tablet) {
   .contact form {
     width: 50%;

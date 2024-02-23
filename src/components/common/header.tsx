@@ -5,6 +5,7 @@ import { LinkButton, } from "@/components/ui";
 
 
 export default async function Header () {
+
   const {skills} = await fetch(`${env.NEXTAUTH_URL}/api/skills`, { cache: 'no-cache' }).then((res) => res.json())
   return (
       <header className="header">

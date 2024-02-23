@@ -13,7 +13,7 @@ export default function Textarea({ label, error, ...props }: Props) {
   return (
     <div className="form-group">
       <label className="is-invalid" htmlFor={props.id}>{label}</label>
-      <textarea className={cs} {...props} >{props.children ?? label}</textarea>
+      <textarea defaultValue={label} className={cs} {...props}/>
       {error && <FormError error={error} /> }
     </div>
   )

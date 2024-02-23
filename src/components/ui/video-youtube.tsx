@@ -13,8 +13,8 @@ export default function VideoYoutube({ id, title }: Props) {
 
   return (
     <div className="video-youtube">
+      <div className="video-container">
       {active ? (
-      <div className="video">
         <iframe
           width="560"
           height="315"
@@ -22,15 +22,15 @@ export default function VideoYoutube({ id, title }: Props) {
           title={title}
           allowFullScreen
         ></iframe>
-
-      </div>
       ) : (
-
       <div className="img" onClick={() => setActive(true)} >
         <img src={imgSrc} alt={title} />
         <Play className="play-button" />
       </div>
           )}
+
+      </div>
+
     </div>
   );
 }

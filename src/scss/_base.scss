@@ -1,6 +1,9 @@
 body {
   background-color: $color-fonce;
 }
+.header, section {
+  margin-bottom: 4rem;
+}
 %container {
   padding-left: 1rem;
   padding-right: 1rem;

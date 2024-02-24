@@ -1,18 +1,19 @@
-import Footer from "@/components/layout/includes/footer";
-import Header from "@/components/layout/includes/header";
-import {getAuthSession} from "@/libs/auth";
+import { MainLayout } from "@/components/layout";
+import { ContactForm } from "@/components/contact";
+import Services from "./services";
+import Portfolio from "./portfolio";
+import VideoYoutube from "@/components/ui/video-youtube";
 
 
 export default async function Home() {
   // const session = await getAuthSession();
 
   return (
-   <>
-   <Header />
-    <main >
-      <Footer />
-    </main>
-   </> 
+  <MainLayout>
+   <Services />
+   <Portfolio />
+   <ContactForm />
+  </MainLayout>
   );
 }
 

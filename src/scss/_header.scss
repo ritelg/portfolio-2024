@@ -13,16 +13,7 @@
   background: url($background-desktop) no-repeat center center/cover;
   opacity: .5;
 }
-@media screen and (min-width: 768px) {
-}
 
-@media screen and (min-width: $width-desktop) {
-  .header {
-    padding-left: 7rem;
-    padding-right: 7rem;
-    min-height: 100vh;
-  }
-}
 
 //============================================
 //		Navbar
@@ -49,7 +40,7 @@
   flex-direction: column;
   position: fixed;
   top: 0;left: 0;bottom: 0;
-  width: 50%;
+  width: 70%;
   background-color: $color-fonce;
   padding-top: 7rem;
   box-shadow: #0e0e0e 0 0 20px;
@@ -67,6 +58,7 @@
   &.active {
     transform: translate3d(0,0,0);
   }
+  li > a.active { color: $color-alt; }
 }
 
 }
@@ -78,7 +70,7 @@
     display: flex;
     li { margin-right: 1rem; }
     li:last-of-type { margin-right: 0; }
-    a:hover { text-decoration: underline; color: $color-alt; }
+    a:hover, a.active { text-decoration: underline; color: $color-alt; }
   }
   li.close-menu-mobile { display: none; }
 }
@@ -94,8 +86,9 @@
 .banner .btn-group { margin-top: 2rem; }
 .banner ul {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
   &:first-of-type { margin-top: 2rem;}
   li {
     display: inline-block; 
@@ -105,3 +98,14 @@
   li:first-child { margin-left: 1rem; }
 }
 
+.banner .socials {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin: 0;
+  li:first-child { margin-left: -.5rem; }
+  & a { padding: .25rem; display: inline-block; opacity: .7; }
+  a img { width: 2rem; }
+  a:hover { opacity: 1; }
+  
+}

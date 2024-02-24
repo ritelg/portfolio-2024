@@ -37,6 +37,11 @@ export default async function Header () {
         Autres :
         {skills["Autres"].map((skill: string) => <li key={skill}>{skill}, </li>)}
         </ul>
+        <ul className="socials">
+        <li><a href="https://www.facebook.com/Rg.Creations.Site.internet.Graphismes"><img src="/icons/icon-facebook.svg" alt=""/></a></li>
+        <li><a href="https://www.behance.net/ritelg31"><img src="/icons/icon-behance.svg" alt=""/></a></li>
+        <li><a href="https://github.com/ritelg"><img src="/icons/icon-github.svg" alt=""/></a></li>
+        </ul>
         <div className="btn-group">
           <LinkButton>Télécharger mon CV</LinkButton>
           <LinkButton href="/#contact">Me contacter</LinkButton>
@@ -45,3 +50,5 @@ export default async function Header () {
     </header>
   )
 }
+
+// <li><a href="https://fr.linkedin.com/in/gaetan-ritel-4a210bbb"><img src="/icons/icon-linkedin.svg" alt=""/></a></li> 

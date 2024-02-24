@@ -24,6 +24,7 @@ export default function PortfolioContent({ endpoint, children }: { endpoint: str
   const [showChildren, setShowChildren] = useState(true)
 
   useEffect(() => {
+    console.log(endpoint)
     fetch(`${endpoint}/${slug}`, { cache: 'no-cache' })
       .then((res) => res.json())
       .then((data) => {

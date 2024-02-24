@@ -98,3 +98,14 @@
   li:first-child { margin-left: 1rem; }
 }
 
+.banner .socials {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin: 0;
+  li:first-child { margin-left: -.5rem; }
+  & a { padding: .25rem; display: inline-block; opacity: .7; }
+  a img { width: 2rem; }
+  a:hover { opacity: 1; }
+  
+}

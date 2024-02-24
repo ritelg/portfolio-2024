@@ -1,3 +1,4 @@
+import {faker} from "@faker-js/faker"
 import {skills, skillsCategories, portfolio, portfolioCategory} from "./data.js"
 import {PrismaClient} from "@prisma/client"
 const prisma = new PrismaClient()

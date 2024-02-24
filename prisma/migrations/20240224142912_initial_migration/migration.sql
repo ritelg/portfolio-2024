@@ -59,6 +59,7 @@ CREATE TABLE "Portfolio" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "title" TEXT NOT NULL,
     "content" TEXT,
+    "smallcontent" TEXT,
     "url" TEXT,
     "image" TEXT NOT NULL,
     "slug" TEXT,

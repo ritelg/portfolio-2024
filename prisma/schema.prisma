@@ -76,6 +76,7 @@ model Portfolio {
   id                  String             @id @default(cuid())
   title               String @unique
   content             String?
+  smallcontent        String?
   category            PortfolioCategory @relation(fields: [portfolioCategoryId], references: [id])
   url                String?
   image              String

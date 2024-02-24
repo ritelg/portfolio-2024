@@ -9,6 +9,7 @@ import {
 } from "@/components/ui";
 
 import { Category, Portfolio } from "@/utils/type";
+import {truncateString} from "@/utils/helpers";
 
 type PortfolioState = {
   category: Category[];
@@ -24,7 +25,6 @@ export default function PortfolioContent({ endpoint, children }: { endpoint: str
   const [showChildren, setShowChildren] = useState(true)
 
   useEffect(() => {
-    console.log(endpoint)
     fetch(`${endpoint}/${slug}`, { cache: 'no-cache' })
       .then((res) => res.json())
       .then((data) => {
@@ -46,16 +46,19 @@ export default function PortfolioContent({ endpoint, children }: { endpoint: str
   return (
     <>
       {showModal && (
-        <Modal closeModal={closeModal}>
+        <Modal closeModal={closeModal} className="portfolio-modal">
           <img src={modalContent.image} alt={modalContent.title} />
           <div>
           <h3>{modalContent.title}</h3>
-          {modalContent.content}
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, doloremque commodi dignissimos aspernatur quisquam, ipsum maxime molestiae illo laudantium ullam, corrupti veritatis quam doloribus officiis ducimus quis. Veniam, quidem obcaecati.</p>
-          <p>Voluptates explicabo beatae ipsam nostrum dignissimos aliquam officia fuga, natus ullam voluptas aliquid accusantium commodi quos repellendus ratione ducimus sequi nihil eaque adipisci similique? Enim vel dolorum assumenda architecto quidem!</p>
+          <p>
+          {truncateString(modalContent.content, 400)}
+          </p>
+            <div className="link-buttons">
+            { modalContent.content.length > 400 && <LinkButton href={`/portfolio/${modalContent.slug}`}>Voir le projet</LinkButton>}
           {modalContent.url && (
             <LinkButton href={modalContent.url}>Voir le site</LinkButton>
           )}
+            </div>
           </div>
         </Modal>
       )}

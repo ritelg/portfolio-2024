@@ -97,6 +97,10 @@
     background-color: rgba($color-fonce, .2);
   }
 }
+.modal.portfolio-modal .link-buttons {
+  display: flex;
+  gap: 1rem;
+}
 
 //============================================
 //		Contact

@@ -8,7 +8,6 @@ import {Portfolio} from "@prisma/client";
 export default async function Portfolio() {
   const endpoint = `${env.NEXTAUTH_URL}/api/portfolio-category`
   const {portfolio, category} = await fetch(`${endpoint}/tout`, { cache: 'no-cache' }).then((res) => res.json())
-  console.log(category)
   return (
     <section className="portfolio container">
       <h2>Portfolio</h2>

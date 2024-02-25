@@ -1,3 +1,5 @@
+import SvgIcon from "@/components/ui/svg-icon";
+
 export default function Services() {
   return (
     <section className="services container" id="services">
@@ -7,7 +9,7 @@ export default function Services() {
       </p>
       <ul>
         <li>
-          <img src="/icons/icon-responsive.svg" alt=""/>
+  <SvgIcon id="responsive" width="50px" height="50px" />
           <h3>Sites internet</h3>
           <p>
           Des sites web sur mesure pour une présence en ligne remarquable.<br />
@@ -15,7 +17,7 @@ export default function Services() {
           </p>
         </li>
         <li>
-          <img src="/icons/icon-design.svg" alt=""/>
+  <SvgIcon id="pen" width="50px" height="50px" />
           <h3>Graphisme</h3>
           <p>
           Des créations graphiques qui captivent et connectent. Du flyer à la carte de visite jusqu’à votre présence sur les réseaux sociaux, laissez votre image parler pour vous.

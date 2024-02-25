@@ -107,7 +107,6 @@
   margin: 0;
   li:first-child { margin-left: -.5rem; }
   & a { padding: .25rem; display: inline-block; opacity: .7; }
-  a img { width: 2rem; }
+  a .icon { width: 2rem; color: #fff; }
   a:hover { opacity: 1; }
-  
 }

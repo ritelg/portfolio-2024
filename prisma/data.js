@@ -55,6 +55,7 @@ export const portfolio = [
     image: '/images/portfolio/integration-the-fiasco.jpg',
     category: 'Sites Web',
     slug: 'integration-the-fiasco',
+    url: 'https://ritelg.github.io/ProjetsPersonnelsEtAnciensPortfolios/tuto-restaurant-grafikart/index.html',
     smallContent: `
     Voici une intégration que j'ai réalisé en vue d’appronfondir mes compétences en développement web. J'ai choisi de reproduire le site web de The Fiasco, une agence de design et de développement web.Ce projet m'a permis de mettre en pratique mes connaissances en HTML, CSS, et Javascript, tout en me familiarisant avec les bonnes pratiques de développement web. J'ai également pu explorer les techniques de design responsive et d'optimisation de la performance, en vue de créer une expérience utilisateur fluide et engageante. Cette intégration m'a permis de consolider mes compétences en développement web et de me familiariser avec les dernières tendances en matière de développement.
     `

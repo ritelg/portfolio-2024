@@ -1,5 +1,6 @@
 "use client"; 
 
+import Editor from "@/components/ui/editor";
 import {useSession} from "next-auth/react"
 
 export default function Page() {

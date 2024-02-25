@@ -1,3 +1,5 @@
+// Disable TypeScript to avoid troubles with `global.` and avoid vscode import troubles
+// @ts-nocheck
 import {env} from '@/libs/env';
 import {prisma} from '@/libs/prisma';
 import {PrismaAdapter} from '@auth/prisma-adapter';

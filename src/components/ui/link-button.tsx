@@ -6,6 +6,6 @@ export default function LinkButton({ children, ...props }: Props) {
     ? props.className 
     : "";
   return (
-    <a className={`btn ${cs}`}>{children}</a>
+    <a className={`btn ${cs}`} {...props}>{children}</a>
   );
 }

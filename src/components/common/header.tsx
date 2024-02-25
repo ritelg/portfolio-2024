@@ -2,19 +2,23 @@ import {env} from "@/libs/env";
 
 import { Nav } from "@/components/common";
 import { LinkButton, } from "@/components/ui";
+import clsx from "clsx";
 
 type Props = {
-  children: React.ReactNode
+  children?: React.ReactNode,
+  className?: string
 }
 
-export default async function Header ({ children }: Props) {
+export default async function Header ({ children, className }: Props) {
 
   const {skills} = await fetch(`${env.NEXTAUTH_URL}/api/skills`, { cache: 'no-cache' }).then((res) => res.json())
+  const cs = clsx("header", className);
     return (
-        <header className="header">
+        <header className={cs}>
         <Nav />
-        {children ? children : (
             <div className="banner">
+        {children ? children : (
+        <>
             <h1>
             Hello, <br/>Je suis Gaëtan Ritel<br/>
             <span>Création de sites internets</span>
@@ -50,8 +54,9 @@ export default async function Header ({ children }: Props) {
               <LinkButton>Télécharger mon CV</LinkButton>
               <LinkButton href="/#contact">Me contacter</LinkButton>
               </div>
-              </div>
+        </>
               )}
+              </div>
   </header>
     )
 }

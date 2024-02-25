@@ -80,6 +80,8 @@ model Portfolio {
   category            PortfolioCategory @relation(fields: [portfolioCategoryId], references: [id])
   url                String?
   image              String
+  image_width        Int?
+  image_height       Int?
   slug              String?
   pos_home            Int
   pos_category        Int

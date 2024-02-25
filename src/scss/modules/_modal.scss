@@ -13,7 +13,7 @@
   padding: 4rem 2rem 2rem;
 }
 
-.modal-content img{ width: 50%; margin-left: auto; margin-right: auto; border-radius: 5px; overflow: hidden; }
+.modal-content img{ border-radius: 5px; overflow: hidden; }
 .modal-content h3 { font-size: 1.5rem; margin-bottom: 1em; }
 .modal-content p { margin: 1rem 0; }
 .modal-close {
@@ -27,12 +27,16 @@
   &:hover { transform: scale3d(1.2,1.2,1); }
 }
 
+@media screen and (max-width: $width-tablet) {
+  .modal-content img{ width: 50%; margin-left: auto; margin-right: auto;}
+}
+
 @media screen and (max-width: $width-desktop) {
   .modal-content img {
-    max-height: 15rem;
+    max-height: 40%;
     margin: 0 auto 1rem auto;
     width: auto;
-    max-width: 100%;
+    max-width: 40%;
   }
 }
 
@@ -46,8 +50,8 @@
     text-align: left;
   }
   .modal-content img { 
-    min-width: 30%;
-    width: 40%; 
+    max-width: 30%;
+    // width: 40%; 
     margin-right: 2rem;
     margin-left: 0;
     margin-bottom: auto;

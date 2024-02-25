@@ -4,7 +4,6 @@ export default function ContactFormNoJs({ ...props }: Props) {
   return (
     <form {...props}>
       <h2>Form sans JAVASCRIPT</h2>
-      console.log('click in nojs form')
     </form>
 
   )

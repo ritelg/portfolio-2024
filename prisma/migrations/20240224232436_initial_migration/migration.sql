@@ -62,6 +62,8 @@ CREATE TABLE "Portfolio" (
     "smallcontent" TEXT,
     "url" TEXT,
     "image" TEXT NOT NULL,
+    "image_width" INTEGER,
+    "image_height" INTEGER,
     "slug" TEXT,
     "pos_home" INTEGER NOT NULL,
     "pos_category" INTEGER NOT NULL,

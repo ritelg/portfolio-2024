@@ -2,6 +2,7 @@
 
 import {useEffect, useState} from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import {
   Modal,
@@ -9,7 +10,7 @@ import {
 } from "@/components/ui";
 
 import { Category, Portfolio } from "@/utils/type";
-import {truncateString} from "@/utils/helpers";
+import {PortfolioFindByCategory} from "@/query/portfolio-query";
 
 type PortfolioState = {
   category: Category[];
@@ -21,17 +22,17 @@ export default function PortfolioContent({ endpoint, children }: { endpoint: str
   const [state, setState] = useState<PortfolioState>()
   const [slug, setSlug] = useState('tout')
   const [showModal, setShowModal] = useState(false)
-  const [modalContent, setModalContent] = useState({image: '', title: '', content: '', url: '', slug: ''})
+  const [modalContent, setModalContent] = useState({image: '', title: '', content: '', url: '', slug: '', smallcontent: '', image_width: 0, image_height: 0})
   const [showChildren, setShowChildren] = useState(true)
 
   useEffect(() => {
-    fetch(`${endpoint}/${slug}`, { cache: 'no-cache' })
+    fetch(`${endpoint}/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         setShowChildren(false)
         setState(data)
       })
-  }, [slug])
+  }, [slug, endpoint])
 
   function closeModal(event: React.MouseEvent<HTMLElement>) {
     event.preventDefault()
@@ -47,14 +48,14 @@ export default function PortfolioContent({ endpoint, children }: { endpoint: str
     <>
       {showModal && (
         <Modal closeModal={closeModal} className="portfolio-modal">
-          <img src={modalContent.image} alt={modalContent.title} />
+          <Image src={modalContent.image} alt={modalContent.title} layout="responsive" width={modalContent.image_width} height={modalContent.image_height}  />
           <div>
           <h3>{modalContent.title}</h3>
           <p>
-          {truncateString(modalContent.content, 400)}
+          {modalContent.smallcontent}
           </p>
             <div className="link-buttons">
-            { modalContent.content.length > 400 && <LinkButton href={`/portfolio/${modalContent.slug}`}>Voir le projet</LinkButton>}
+            { modalContent.content.length > 0 && <LinkButton href={`/portfolio/${modalContent.slug}`}>Voir le projet</LinkButton>}
           {modalContent.url && (
             <LinkButton href={modalContent.url}>Voir le site</LinkButton>
           )}
@@ -85,7 +86,7 @@ export default function PortfolioContent({ endpoint, children }: { endpoint: str
           key={p.title} 
           className={p.title.indexOf('Flyer') ? "portfolio-item" : "porfolio-flyer portfolio-item"}
         >
-          <img src={p.image} alt={p.title} />
+          <Image src={p.image} alt={p.title} width={p.image_width} height={p.image_height} layout="responsive"  />
         </Link>
       ))}
       </div>

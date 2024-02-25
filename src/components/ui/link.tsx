@@ -9,6 +9,5 @@ interface props extends React.AnchorHTMLAttributes<HTMLAnchorElement>, LinkProps
 export default function Link({href, children, ...props}: props) {
   const path = usePathname()
   const cs = clsx(props.className, {active: path === href})
-  console.log(cs, path, href)
   return <BaseLink className={cs} href={href} {...props}>{children}</BaseLink>
 }

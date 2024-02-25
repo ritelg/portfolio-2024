@@ -1,17 +1,11 @@
 import {prisma} from "@/libs/prisma"
+import {all} from "@/query/skills-query";
 
 export async function GET() {
-  const skills = await prisma.skillCategory.findMany({
-    select: {
-      title: true,
-      Skills: {
-        select: {title: true}
-      }
-    }
-  })
+  const skills = await all();
 
   const skillsMap = new Map();
-  skills.forEach((category) => {
+  skills.forEach((category: any) => {
     const skills = category.Skills.map((skill) => skill.title);
     skillsMap.set(category.title, skills);
   })

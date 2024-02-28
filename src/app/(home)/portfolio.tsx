@@ -12,7 +12,7 @@ export default async function Portfolio() {
       <h2>Portfolio</h2>
       <p>Explorez notre sélection de projets récents, reflétant notre expertise en conception de sites web, création de logos, élaboration de flyers et design de cartes de visites.</p>
       <PortfolioContent endpoint={endpoint} >
-      <div className="portfolio-list">
+      <div className="portfolio-list tout">
       {portfolio.map((p: PortfolioType) => (
         <Link 
         key={p.title} 

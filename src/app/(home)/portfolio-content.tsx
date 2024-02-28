@@ -10,7 +10,7 @@ import {
 } from "@/components/ui";
 
 import { Category, Portfolio } from "@/utils/type";
-import {PortfolioFindByCategory} from "@/query/portfolio-query";
+import clsx from "clsx";
 
 type PortfolioState = {
   category: Category[];
@@ -72,7 +72,7 @@ export default function PortfolioContent({ endpoint, children }: { endpoint: str
         >{c.title}</li>
       ))} 
       </ul>
-      <div className="portfolio-list">
+      <div className={clsx("portfolio-list",slug)}>
       {state?.portfolio.map(p => (
         <Link 
           href={`/portfolio/${p.slug}`}

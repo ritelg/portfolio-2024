@@ -67,6 +67,7 @@ body {
   }
   .portfolio-modal p { margin-left: auto; margin-right: auto; margin-bottom: 2rem;}
   .portfolio-modal .link-buttons { justify-content: center; }
+  .portfolio-modal img { width: auto !important; }
 }
 
 @media screen and (min-width: $width-desktop) {

@@ -3,7 +3,6 @@ import Link from "next/link";
 import {env} from "@/libs/env";
 import PortfolioContent from "./portfolio-content";
 import { Portfolio as PortfolioType } from "@/utils/type";
-import {Portfolio} from "@prisma/client";
 
 export default async function Portfolio() {
   const endpoint = `${env.NEXTAUTH_URL}/api/portfolio-category`

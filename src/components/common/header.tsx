@@ -49,6 +49,9 @@ export default async function Header ({ children, className }: Props) {
               <li><a href="https://www.facebook.com/Rg.Creations.Site.internet.Graphismes"><img src="/icons/icon-facebook.svg" alt=""/></a></li>
               <li><a href="https://www.behance.net/ritelg31"><img src="/icons/icon-behance.svg" alt=""/></a></li>
               <li><a href="https://github.com/ritelg"><img src="/icons/icon-github.svg" alt=""/></a></li>
+              <li><a href="https://www.codeur.com/-ritelg"><img src="/icons/icon-codeur.svg" alt=""/></a></li>
+              <li><a href="https://www.malt.fr/profile/gaetanritel"><img src="/icons/icon-malt.svg" alt=""/></a></li>
+              <li><a href="https://comeup.com/fr/@gaetanritel"><img src="/icons/icon-comeup.svg" alt=""/></a></li>
               </ul>
               <div className="btn-group">
               <LinkButton>Télécharger mon CV</LinkButton>

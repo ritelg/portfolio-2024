@@ -5,6 +5,7 @@ export type Category = {
 }
 export type Portfolio = {
   title: string;
+  h1: string;
   content: string;
   smallcontent: string;
   pos_category: number;
@@ -14,4 +15,5 @@ export type Portfolio = {
   image_width: number;
   image_height: number;
   slug: string;
+  category: string;
 }

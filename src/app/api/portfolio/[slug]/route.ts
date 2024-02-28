@@ -1,11 +1,8 @@
-import {prisma} from "@/libs/prisma";
-import {findBySlug} from "@/query/portfolio-query";
+import {getDataBySlug} from "@/utils/api-files";
 
 export async function GET(
   req: Request,
   {params}: {params: {slug: string}}
 ) {
-  let portfolioItem = await findBySlug(params.slug)
-
-  return Response.json({'portfolioItem': portfolioItem});
+  return Response.json({'portfolioItem': getDataBySlug('projects', params.slug)});
 }

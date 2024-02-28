@@ -1,22 +1,17 @@
-import {prisma} from "@/libs/prisma";
-import {all, allCategory, findByCategory} from "@/query/portfolio-query";
+import {portfolioCategory} from "@/data";
+import {getAllData, getDatasByCategory} from "@/utils/api-files";
 
 export async function GET(
   req: Request,
   {params}: {params: {slug: string}}
 ) {
-  let category = await allCategory();
-  category = [{slug: 'tout', title: 'Tout'}, ...category];
-
-  if (!category.find((c: string) => c.slug === params.slug)) {
+  if (!portfolioCategory.find((c: {title: string, slug: string}) => c.slug === params.slug)) {
     return Response.json({error: "Not found"}, {status: 404});
   }
 
   if (params.slug === "tout") {
-    const portfolio = await all()
-    return Response.json({'portfolio': portfolio, 'category': category});
+    return Response.json({'portfolio': getAllData('projects'), 'category': portfolioCategory});
   }
 
-  const portfolio = await findByCategory(params.slug);
-  return Response.json({'portfolio': portfolio?.Portfolio, 'category': category});
+  return Response.json({'portfolio': getDatasByCategory('projects', params.slug), 'category': portfolioCategory});
 }

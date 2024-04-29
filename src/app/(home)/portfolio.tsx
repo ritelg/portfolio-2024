@@ -6,9 +6,9 @@ import PortfolioContent from "./portfolio-content";
 
 export default async function Portfolio() {
   const endpoint = `${env.NEXTAUTH_URL}/api/portfolio-category`;
-  const { portfolio, category } = await fetch(`${endpoint}/tout`).then((res) =>
-    res.json()
-  );
+  const { portfolio, category } = await fetch(`${endpoint}/tout`)
+    .then((res) => res.json())
+    .catch((error) => console.log(error));
   return (
     <section className="portfolio container" id="portfolio">
       <h2>Portfolio</h2>

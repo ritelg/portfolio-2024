@@ -1,5 +1,4 @@
-import { env } from "@/libs/env";
-
+import { getAllSkills } from "@/actions/portfolio";
 import { Nav } from "@/components/common";
 import { LinkButton } from "@/components/ui";
 import clsx from "clsx";
@@ -10,9 +9,7 @@ type Props = {
 };
 
 export default async function Header({ children, className }: Props) {
-  const { skills } = await fetch(`${env.NEXTAUTH_URL}/api/skills`, {
-    cache: "no-cache",
-  }).then((res) => res.json());
+  const { skills } = await getAllSkills();
   const cs = clsx("header", className);
   return (
     <header className={cs}>
@@ -97,7 +94,7 @@ export default async function Header({ children, className }: Props) {
               </li>
             </ul>
             <div className="btn-group">
-              <LinkButton>Télécharger mon CV</LinkButton>
+              {/* <LinkButton>Télécharger mon CV</LinkButton> */}
               <LinkButton href="/#contact">Me contacter</LinkButton>
             </div>
           </>

@@ -1,0 +1,49 @@
+$width-btn-pagination: 40px;
+$height-btn-pagination: $width-btn-pagination;
+
+.caroussel {
+  width: 100%;
+  position: relative;
+}
+.caroussel-fake-container {
+  overflow-x: hidden;
+}
+.caroussel-container {
+  display: flex;
+}
+.caroussel-item {
+  padding: 10px;
+  &:first-child {
+    padding-left: 0;
+  }
+  display: flex;
+  align-items: center;
+}
+
+.caroussel-prev, .caroussel-next {
+  width: $width-btn-pagination;
+  height: $height-btn-pagination;
+  position: absolute;
+  display: block;
+  top: calc(50% - 20px);
+  left: -50px;
+  z-index: 1;
+  border-radius: 50%;
+  transition: transform .3s;
+  cursor: pointer;
+  background: url($icon-arrow-circle) center center / cover no-repeat;
+  &:hover {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+.caroussel-prev {
+  transform: rotate(180deg);
+  &:hover {
+    transform: rotate(180deg) scale3d(1.1, 1.1, 1);
+  }
+}
+.caroussel-next {
+  background: url($icon-arrow-circle) center center / cover no-repeat;
+  right: -50px;
+  left: auto;
+}

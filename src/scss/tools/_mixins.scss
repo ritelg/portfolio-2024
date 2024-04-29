@@ -1,0 +1,42 @@
+$medium: 950px!default;
+
+@mixin clearfix {
+  overflow: hidden;
+  height: auto;
+}
+
+@mixin circle($width, $padding, $border, $background: #fff) {
+  width: $width;
+  border: $border;
+  position: relative;
+  height: auto;
+  padding: $padding 0;
+  background: $background;
+}
+
+@mixin triangle($taille, $color, $left) {
+  &::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: $taille solid $color;
+    border-left: $taille solid transparent;
+    border-right: $taille solid transparent;
+    bottom: -$taille;
+    left: $left;
+    @content;
+  }
+}
+
+
+@mixin media-max($max-min: 'max', $width: $medium) {
+  @if($max-min == 'max') {
+    @media only screen and (max-width: $width) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: $width) {
+      @content;
+    }
+  }
+}

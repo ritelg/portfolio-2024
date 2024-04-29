@@ -1,0 +1,120 @@
+.form-group {
+  margin-bottom: 1rem;
+  position: relative;
+}
+.form-group label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.form-group input:focus,
+.form-group input.has-value {
+  padding-top: 1rem;
+}
+.form-group input:focus + label,
+.form-group.form-textarea label,
+.form-group input.has-value + label {
+  top: 0;
+  transform: translate3d(0, -50%, 0);
+  background-color: $color-fonce;
+  opacity: 1;
+  padding: 0 0.5rem;
+}
+textarea {
+  resize: vertical;
+  width: 100%;
+  min-height: 150px;
+}
+
+.btn,
+%btn {
+  cursor: pointer;
+  background-color: transparent;
+  color: $color-clair;
+  border: 1px solid $color-clair;
+  border-radius: $border-radius;
+  height: auto;
+  padding: 0.375rem 0.75rem;
+  transition-property: color, background-color;
+  font-family: $premiere-police;
+  font-size: 1rem;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+.btn:hover {
+  background-color: $color-alt;
+  border-color: $color-alt;
+}
+.btn-group {
+  display: flex;
+  margin-top: 1rem;
+  & > .btn {
+    margin-right: 1rem;
+  }
+  & > .btn:last-child {
+    margin-right: 0;
+  }
+}
+input,
+textarea,
+label,
+select {
+  color: $color-clair;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: $premiere-police;
+  border: 1px solid darken($color-clair, 40%);
+  border-radius: $border-radius;
+  background-color: transparent;
+  line-height: 1.15;
+  display: block;
+  padding: 0.375rem 0.75rem;
+}
+input.is-invalid,
+textarea.is-invalid {
+  border-color: #dc3545;
+}
+label {
+  border: none;
+  padding-left: 0;
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
+}
+::placeholder,
+::-moz-placeholder,
+::-webkit-input-placeholder,
+::-ms-input-placeholder {
+  font-weight: 300;
+  padding: 0.5rem 1rem;
+  font-family: $premiere-police;
+}
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-family: $premiere-police;
+  padding-top: 0.5rem;
+  display: inline-block;
+}
+
+ul.invalid-feedback {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  li {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

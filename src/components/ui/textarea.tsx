@@ -7,12 +7,14 @@ interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 }
 
 export default function Textarea({ label, error, className, ...props }: Props) {
-  const  cs = clsx(className,  error && "is-invalid")
+  const cs = clsx(className, error && "is-invalid");
   return (
-    <div className="form-group">
-      <label className="is-invalid" htmlFor={props.id}>{label}</label>
-      <textarea defaultValue={label} className={cs} {...props}/>
-      {error && <FormError error={error} /> }
+    <div className="form-group form-textarea">
+      <label className="is-invalid" htmlFor={props.id}>
+        {label}
+      </label>
+      <textarea className={cs} {...props} />
+      {error && <FormError error={error} />}
     </div>
-  )
+  );
 }

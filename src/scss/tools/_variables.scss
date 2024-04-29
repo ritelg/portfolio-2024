@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Open+Sans:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Open+Sans:wght@400&display=swap");
 
 /**  COLORS  **/
-$color-alt: #00C9FF;
+$color-alt: #00c9ff;
 $color-fonce: #151515;
-$color-clair: #F8F9FA;
+$color-clair: #f8f9fa;
+$color-background: #151515;
 
-$danger-text: #2c0b0e; 
-$danger-background: #F8D7DA;
-$danger-hover: #BB2D3B;
-$danger-color: #DC3545;
+$danger-text: #2c0b0e;
+$danger-background: #f8d7da;
+$danger-hover: #bb2d3b;
+$danger-color: #dc3545;
 
 $succes-text: #051b11;
 $succes-hover: #157347;
-$succes-background: #D1E7DD;
+$succes-background: #d1e7dd;
 
 $warning-text: #332701;
-$warning-hover: #FFCA2C;
-$warning-background: #FFF3CD;
+$warning-hover: #ffca2c;
+$warning-background: #fff3cd;
 
-
-$box-shadow: 0 0 6px rgba($color-fonce, .2); 
-$directory-image: '/images/';
-$background-desktop: $directory-image + 'background-desktop.jpg';
-$logo: $directory-image + 'logo.svg';
-$menu-mobile: $directory-image + 'menu-mobile.svg';
+$box-shadow: 0 0 6px rgba($color-fonce, 0.2);
+$directory-image: "/images/";
+$background-desktop: $directory-image + "background-desktop.jpg";
+$logo: $directory-image + "logo.svg";
+$menu-mobile: $directory-image + "menu-mobile.svg";
 
 /** SIZES **/
 $premiere-police: "Open Sans", sans-serif;
-$second-police: 'JetBrains Mono', monospace;
+$second-police: "JetBrains Mono", monospace;
 
 $font-size-mobile: 16px;
 $font-size-tablet: 18px;
@@ -38,11 +38,10 @@ $factor-size-desktop: 1.5;
 
 $border-radius: 5px;
 
-
 $width-tablet: 768px;
 $width-desktop: 1024px;
 $width-desktop-l: 1440px;
 
-$assets-directory: '/images/';
+$assets-directory: "/images/";
 
 // $logo: $image-directory + 'logo.svg';

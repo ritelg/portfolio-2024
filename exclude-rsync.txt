@@ -1,0 +1,8 @@
+.git/*
+.git
+vitest.config.ts
+next.config.mjs
+node_modules
+.next
+.github
+

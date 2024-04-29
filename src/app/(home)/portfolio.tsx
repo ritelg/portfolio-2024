@@ -1,3 +1,4 @@
+import { getAllPortfolio } from "@/actions/portfolio";
 import { env } from "@/libs/env";
 import { Portfolio as PortfolioType } from "@/utils/type";
 import Image from "next/image";
@@ -6,9 +7,8 @@ import PortfolioContent from "./portfolio-content";
 
 export default async function Portfolio() {
   const endpoint = `${env.NEXTAUTH_URL}/api/portfolio-category`;
-  const { portfolio, category } = await fetch(`${endpoint}/tout`)
-    .then((res) => res.json())
-    .catch((error) => console.log(error));
+  const { portfolio, category } = await getAllPortfolio();
+  console.log("portfolio ::: ", portfolio);
   return (
     <section className="portfolio container" id="portfolio">
       <h2>Portfolio</h2>

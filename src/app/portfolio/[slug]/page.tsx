@@ -1,3 +1,4 @@
+import { getPortfolioBySlug } from "@/actions/portfolio";
 import { Header } from "@/components/common";
 import { LinkButton } from "@/components/ui";
 import { env } from "@/libs/env";
@@ -12,10 +13,10 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  let data = await fetch(`${env.NEXTAUTH_URL}/api/portfolio/${params.slug}`)
-    .then((res) => res.json())
-    .catch((err) => console.error(err));
-  data = data.portfolioItem;
+  let data = await getPortfolioBySlug(params.slug).catch((err) =>
+    console.log(err)
+  );
+  console.log(data);
 
   return {
     title: data.title,
@@ -56,11 +57,10 @@ export default async function PortfolioDetailPage({
 }: {
   params: { slug: string };
 }) {
-  let data = await fetch(`${env.NEXTAUTH_URL}/api/portfolio/${params.slug}`)
-    .then((res) => res.json())
-    .catch((err) => console.error(err));
+  let data = await getPortfolioBySlug(params.slug).catch((err) =>
+    console.log(err)
+  );
   if (!data) return;
-  data = data.portfolioItem;
 
   console.log(data);
   return (

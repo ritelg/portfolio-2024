@@ -15,3 +15,7 @@ $primary: #9bd9e3;
 $secondary: #1f8393;
 $accent: #40cde3;
 ```
+
+## Issues
+
+- Heading ne s’affiche pas quand on utilise le composant Tailwind : Pour corriger l’erreur version de @react-email/components ^0.0.15

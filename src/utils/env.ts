@@ -5,9 +5,9 @@ export const env = createEnv({
   server: {
     NEXTAUTH_SECRET: z.string(),
     NEXTAUTH_URL: z.string().url(),
-    MAILJET_API_PUBLIC_KEY: z.string(),
-    MAILJET_API_PRIVATE_KEY: z.string(),
     MAILER_TO: z.string(),
+    MAILER_FROM: z.string(),
+    RESEND_API_KEY: z.string(),
     // NEXT_ENV: z.string(),
   },
   client: {

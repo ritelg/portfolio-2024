@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 
 import { Favicons } from "@/components/common";
 
-
 export const metadata: Metadata = {
   title: "Portfolio - Gaëtan Ritel",
   description: "Portfolio - Gaëtan Ritel - Fullstack developer",
@@ -18,13 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <Favicons/>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <Favicons />
+        <script src="/app.js" defer></script>
       </head>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
-        //<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400,500,700&family=Open+Sans:wght@400&display=swap" rel="stylesheet"/>
+//<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400,500,700&family=Open+Sans:wght@400&display=swap" rel="stylesheet"/>
